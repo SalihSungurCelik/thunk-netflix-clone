@@ -39,3 +39,30 @@ body {
   text-align: center;
   font-weight: bold;
 }
+
+.actor-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.actor-card img {
+  width: 133.2px;
+  object-fit: contain;
+}
+
+.actor-card:hover > p {
+  display: grid;
+  transition: all 0.5s;
+}
+
+.actor-card p {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.493);
+}
