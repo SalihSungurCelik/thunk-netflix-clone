@@ -4,7 +4,7 @@ import { getGenres, getPopuler } from "../redux/actions/movieActions";
 import Hero from "../components/Hero";
 import MovieList from "../components/MovieList";
 
-const MainPage = () => {
+const MainPage = ({ setShowBar }) => {
   const state = useSelector((store) => store.genre);
   const dispatch = useDispatch();
 
@@ -24,7 +24,9 @@ const MainPage = () => {
       ) : state.isError ? (
         <p> Üzgünüz bir hata oluştu. </p>
       ) : (
-        state.genres.map((genre) => <MovieList key={genre.id} genre={genre} />)
+        state.genres.map((genre) => (
+          <MovieList setShowBar={setShowBar} key={genre.id} genre={genre} />
+        ))
       )}
     </div>
   );
